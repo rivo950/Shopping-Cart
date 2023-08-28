@@ -95,7 +95,7 @@
                                             </option>
                                         @endfor
                                     </select>
-                                </form>ù
+                                </form>
                             </td>
                             
                             <td class="px-6 py-4 whitespace-nowrap">
