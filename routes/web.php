@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Models\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +30,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/',[PageController::class,'index'])->name('home');
+Route::get('/shop',[ProductController::class,'index'])->name('shop');
+Route::get('/shop/{id}',[ProductController::class,'show'])->name('product');
+Route::get('/cart',[CartControllerController::class,'index'])->name('cart');
+
+
 
 require __DIR__.'/auth.php';
